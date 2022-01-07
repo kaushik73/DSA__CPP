@@ -1,0 +1,22 @@
+1. Selection Sort -> Find the minimun element in unsorted array and swap it with element at begining.
+  To sort an array of size n in ascending order
+  selectionSort(array, size)
+    repeat (size - 1) times
+    set the first unsorted element as the minimum
+    for each of the unsorted elements
+      if element < currentMinimum
+        set element as new minimum
+    swap minimum with first unsorted position
+  end selectionSort
+
+2. Bubble Sort -> Reapetedly swap two adjacent elements if they are in wrong order.
+
+3. Insertion Sort ->Agar min. hai too aage le jao.
+ Insert an element from an unsorted array to its correct position in sorted array.
+  To sort an array of size n in ascending order: 
+  1: Iterate from arr[1] to arr[n] over the array. 
+  2: Compare the current element (key) to its predecessor. 
+
+4. Number of Sub-Array = n(n+1)/2
+5. Subsequences = 2ⁿ 
+6. 

@@ -1,0 +1,12 @@
+main(){
+	FILE *in=fopen("name_of_file.txt","r");
+	char c;
+	while((c=fgetc(in))!=EOF)
+		putchar(c);
+        -
+        /
+        +
+        
+	fclose(in);
+	return 0;
+}

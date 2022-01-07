@@ -1,0 +1,24 @@
+Size limit of array declared in int main() is of range 10^5. 
+
+Size limit of array declared before int main() i.e. declared globally is of range 10^7. but for this you need to pass constant variable or constant value in array size .
+eg. const int n = 2e7;
+int a[n];
+here const keyword is used because it specifies that in this program the value of n cannot be updated.
+
+
+1e7 = 10^7.
+
+
+
+vector<vector<int>> intervals = {{6, 8}, {1, 9}, {2, 4}, {4, 7}};
+for (int i = 0; i < intervals.size(); i++)
+    {
+        for (int j = 0; j < intervals[i].size(); j++)
+        {
+            cout << intervals[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+
+ int *arr = new int[n];  // ALLOCATING DYANAMIC SIZE TO ARRAY

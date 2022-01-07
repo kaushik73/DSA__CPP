@@ -1,0 +1,1 @@
+{"name":"Local: Map_Question","url":"f:\\Vs Code C++\\STL\\Map_Question.cpp","tests":[{"id":1638881425782,"input":"3\nEve 78\nBob 99\nAlice 78","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Vs Code C++\\STL\\Map_Question.cpp","group":"local","local":true}
