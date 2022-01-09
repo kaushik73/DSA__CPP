@@ -1,75 +1,58 @@
-// A C++ program for merging overlapping intervals
-#include<bits/stdc++.h>
+// A Simple Merge based O(n) solution to find
+// median of two sorted arrays
+#include <bits/stdc++.h>
 using namespace std;
 
-// An interval has start time and end time
-struct Interval
+/* This function returns median of ar1[] and ar2[].
+Assumption in this function:
+Both ar1[] and ar2[] are sorted arrays */
+int getMedian(int ar1[], int ar2[], int n, int m)
 {
-    int start, end;
-};
-
-// Compares two intervals according to their starting time.
-// This is needed for sorting the intervals using library
-// function std::sort(). See http://goo.gl/iGspV
-bool compareInterval(Interval i1, Interval i2)
-{
-    return (i1.start < i2.start);
+	int i = 0; /* Current index of input array ar1[] */
+	int j = 0; /* Current index of input array ar2[] */
+	int count;
+	int m1 = -1, m2 = -1;
+	/*loop till (m+n)/2*/
+	for (count = 0; count <= (m + n)/2; count++)
+	{
+		//store (n+m)/2-1 in m2
+		m2=m1;
+		if(i != n && j != m)
+		{
+			m1 = (ar1[i] > ar2[j]) ? ar2[j++] : ar1[i++];
+		}
+		else if(i < n)
+		{
+			m1 = ar1[i++];
+		}
+		// for case when j<m,
+		else
+		{
+			m1 = ar2[j++];
+		}
+	}
+	// Since there are (n+m) elements,
+	// There are following two cases
+	// if n+m is odd then the middle
+	// index is median i.e. (m+n)/2
+	// other wise median will be average of elements
+	// at index ((m+n)/2 - 1) and (m+n)/2
+	// in the array obtained after merging ar1 and ar2
+	if((m + n) % 2 == 1){
+		return m1;
+	}
+	else{
+		return (m1+m2)/2;
+	}
 }
-
-// The main function that takes a set of intervals, merges
-// overlapping intervals and prints the result
-void mergeIntervals(Interval arr[], int n)
-{
-    // Test if the given set has at least one interval
-    if (n <= 0)
-        return;
-
-    // Create an empty stack of intervals
-    stack<Interval> s;
-
-    // sort the intervals in increasing order of start time
-    sort(arr, arr+n, compareInterval);
-
-    // push the first interval to stack
-    s.push(arr[0]);
-
-    // Start from the next interval and merge if necessary
-    for (int i = 1 ; i < n; i++)
-    {
-        // get interval from stack top
-        Interval top = s.top();
-
-        // if current interval is not overlapping with stack top,
-        // push it to the stack
-        if (top.end < arr[i].start)
-            s.push(arr[i]);
-
-        // Otherwise update the ending time of top if ending of current
-        // interval is more
-        else if (top.end < arr[i].end)
-        {
-            top.end = arr[i].end;
-            s.pop();
-            s.push(top);
-        }
-    }
-
-    // Print contents of stack
-    cout << "\n The Merged Intervals are: ";
-    while (!s.empty())
-    {
-        Interval t = s.top();
-        cout << "[" << t.start << "," << t.end << "] ";
-        s.pop();
-    }
-    return;
-}
-
-// Driver program
+/* Driver code */
 int main()
 {
-    Interval arr[] =  { {16,18}, {1,9}, {2,4}, {4,7} };
-    int n = sizeof(arr)/sizeof(arr[0]);
-    mergeIntervals(arr, n);
-    return 0;
+		int ar1[] = {9,10,11,12};
+	int ar2[] = {5,8,10,20};
+	int n1 = sizeof(ar1)/sizeof(ar1[0]);
+	int n2 = sizeof(ar2)/sizeof(ar2[0]);
+	cout << getMedian(ar1, ar2, n1, n2);
 }
+
+// This is code is contributed by rathbhupendra, modified by rajesh999

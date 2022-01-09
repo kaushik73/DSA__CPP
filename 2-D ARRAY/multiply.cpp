@@ -33,7 +33,7 @@ int main()
     }
         cout<<"\nMultiplication of these two array are  "<<endl;
 
-  for (int i = 0; i < r2; i++)
+  for (int i = 0; i < r1; i++)
     {
         for (int j = 0; j < c2; j++)
         {
