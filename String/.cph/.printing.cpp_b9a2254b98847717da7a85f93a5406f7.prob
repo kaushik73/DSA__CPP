@@ -1,1 +1,1 @@
-{"name":"Local: printing","url":"f:\\Vs Code C++\\String\\printing.cpp","tests":[{"id":1630897236852,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Vs Code C++\\String\\printing.cpp","group":"local","local":true}
+{"name":"Local: printing","url":"f:\\Vs Code C++\\String\\printing.cpp","tests":[{"id":1630897236852,"input":"kaus\njain","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Vs Code C++\\String\\printing.cpp","group":"local","local":true}
