@@ -1,7 +1,5 @@
 // Case Converter
 // Greatest number finder
-// character which has maximum frequency.
-
 #include <bits/stdc++.h>
 using namespace std;
 int main()
@@ -35,9 +33,5 @@ int main()
     //make greatest number from s2 string :
     // by default sort function do lowest to highest.
     sort(s2.begin(), s2.end(), greater<int>());
-    cout << "Greatest number from s2 is : " << s2 << endl
-         << endl;
-
-    // --------------------------------3--------------------------------------
-   
+    cout << "Greatest number from s2 is : " << s2 << endl;
 }
