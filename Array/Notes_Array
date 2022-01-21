@@ -22,3 +22,9 @@ for (int i = 0; i < intervals.size(); i++)
 
 
  int *arr = new int[n];  // ALLOCATING DYANAMIC SIZE TO ARRAY
+
+ cout << typeid(variable).name() << endl;
+
+
+
+85 and 71 are parenthesis problems.

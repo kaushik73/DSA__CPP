@@ -22,6 +22,7 @@ int main()
 {
 
     map<int, string> m; //ordered map
+    // unordered_map<int, string> m; //ordered map
     m[26] = " Kaushik";
     m.insert({2, "manan"});
     m.insert(make_pair(23, "Doctor"));
