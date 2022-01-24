@@ -1,1 +1,1 @@
-{"name":"Local: Map","url":"f:\\Vs Code C++\\STL\\Map.cpp","tests":[{"id":1642653043713,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Vs Code C++\\STL\\Map.cpp","group":"local","local":true}
+{"name":"Local: Map","url":"f:\\Vs Code C++\\STL\\Map.cpp","tests":[{"id":1642653043713,"input":"ka\nus\nhik\njain\nmanan\njaha\nds\nftyyy","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Vs Code C++\\STL\\Map.cpp","group":"local","local":true}
