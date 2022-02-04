@@ -2,11 +2,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()  
+int main()
 {
     struct node
     {
-        int data; 
+        int data;
         struct node *next;
     };
 
@@ -16,7 +16,7 @@ int main()
     while (choice)
     {
         newnode = (struct node *)malloc(sizeof(struct node));
-        // cout << "Enter data : ";
+        cout << "Enter data : ";
         cin >> newnode->data;
         newnode->next = NULL;
         if (head == NULL)
@@ -32,6 +32,7 @@ int main()
         cout << "Do you want to continue(0,1) : ";
         cin >> choice;
     }
+
     temp = head;
     while (temp != NULL)
     {
@@ -39,23 +40,26 @@ int main()
         temp = temp->next;
     }
     cout << "\nReverse of Your LL is : ";
+
+    //Main Code Start
     struct node *current = head;
     struct node *next = NULL;
     struct node *prev = NULL;
     while (current != NULL)
-    {   next = current->next; //next ↑
+    {
+        next = current->next; //next ↑
         current->next = prev; //Main ↑
-        prev = current; //prev ↑ 
-        current = next; //current ↑
-    } 
+        prev = current;       //prev ↑
+        current = next;       //current ↑
+    }
     head = prev;
+    // Main Code end
 
+    //printing LL
     temp = head;
     while (temp != NULL)
     {
         cout << temp->data << " ";
         temp = temp->next;
     }
-
-
 }

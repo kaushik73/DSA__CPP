@@ -14,10 +14,12 @@ int main()
     while (choice)
     {
         newnode = (struct node *)malloc(sizeof(struct node));
+        // node* new_node = new node();
+
         cout << "Enter data : ";
         cin >> newnode->data;
         newnode->next = NULL;
-        if (head == NULL)
+        if (head == NULL) // it is for 1st element 
         {
             head = temp = newnode;
         }
@@ -62,7 +64,7 @@ int main()
     // }
     // prev->next = NULL;
     // temp = head;
-    // cout << "\nNode deleted from end Your LL is \t";
+    // cout << "\nNode deleted from end Now Your LL is \t";
     // while (temp != NULL)
     // {
     //     cout << temp->data << " ";
@@ -76,7 +78,6 @@ int main()
     cout << "Enter position to be deleted : ";
     cin >> pos;
     temp = head;
-
     for (int k = 1; k < pos; k++)
     {
         prev = temp;

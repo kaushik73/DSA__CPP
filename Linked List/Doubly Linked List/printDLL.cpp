@@ -1,19 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
+struct node
+{
+    int data;
+    struct node *next; // it is a pointer points to a data type of struct node.
+    struct node *prev;
+};
+void print_it(node* temp); //declaration
 int main()
 {
-    struct node
-    {
-        int data;
-        struct node *next;
-        struct node *prev;
-    };
     struct node *head, *temp, *newnode;
     int choice;
     head = NULL;
     while (choice)
     {
-        newnode = (struct node *)malloc(sizeof(struct node));
+        // newnode = (struct node *)malloc(sizeof(struct node));
+        node *newnode = new node();
+
         // cout << "Enter Data : ";
         cin >> newnode->data;
         newnode->prev = NULL;
@@ -32,6 +35,10 @@ int main()
         cin >> choice;
     }
     temp = head;
+    print_it(temp);
+}
+void print_it(node *temp) //defination
+{
     while (temp != NULL)
     {
         cout << temp->data << " ";

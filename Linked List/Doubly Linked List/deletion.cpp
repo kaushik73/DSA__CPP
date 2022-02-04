@@ -4,7 +4,7 @@ struct Node
 {
     int data;
     struct Node *prev;
-    struct Node *next; 
+    struct Node *next;
 };
 struct Node *head = NULL;
 struct Node *tail = head;
@@ -12,7 +12,7 @@ struct Node *temp = head;
 int count = 0, temp1 = 0;
 void insert(int ndata)
 {
-    struct Node *newnode, *temp;
+    Node *newnode, *temp;
     int choice;
     newnode = (struct Node *)malloc(sizeof(struct Node));
     // cout << "Enter Data : ";
@@ -28,7 +28,6 @@ void insert(int ndata)
         temp->next = newnode;
         newnode->prev = temp;
         temp = tail = newnode;
-        // cout << "head" << head->data << endl;
     }
 }
 
@@ -78,7 +77,7 @@ void display()
     cout << "\nYour LL is : ";
     struct Node *traverse;
     traverse = head;
-    cout<<head->data;
+    // cout << head->data;
     while (traverse != NULL)
     {
         cout << traverse->data << " ";
@@ -97,22 +96,43 @@ int len()
     }
     return counter;
 }
-// Reverse is not working :-  
-void Reverse()
+// Reverse1 is not working :-
+void Reverse1()
 {
-     struct Node *nextnode;  
+     struct Node *nextnode;
      struct Node *current;
      while (current !=  NULL)
      {
        nextnode = current->next;
        current->next = current->prev;
-       current->prev = nextnode;              
+       current->prev = nextnode;
        current = current->next;
      }
      current = head;
      head = tail;
      tail = current;
 }
+void Reverse(Node **head_ref)
+{
+    Node *temp = NULL;
+    Node *current = *head_ref;
+
+    /* swap next and prev for all nodes of
+    doubly linked list */
+    while (current != NULL)
+    {
+        temp = current->prev;
+        current->prev = current->next;
+        current->next = temp;
+        current = current->prev;
+    }
+
+    /* Before changing the head, check for the cases like empty
+        list and list with only one node */
+    if (temp != NULL)
+        *head_ref = temp->prev;
+}
+
 int main()
 {
     insert(5);
@@ -121,7 +141,7 @@ int main()
     insert(8);
 
     display();
-    cout << "\n1 : Delete Element from begning :- " << endl;
+    cout << "\n1 :Delete Element from begning :- " << endl;
     cout << "2 : Delete Element from End :- " << endl;
     cout << "3 : Delete Element from Any position :- " << endl;
     cout << "4 : Count Number of Elements :- " << endl;
@@ -147,8 +167,8 @@ int main()
         len();
         break;
     case 5:
-    cout<<"Case 5 Executing....";
-        Reverse();
+        cout << "Case 5 Executing....";
+        Reverse(&head);
         break;
     default:
         cout << "\nWrong Choice";

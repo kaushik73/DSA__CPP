@@ -2,7 +2,6 @@
 // all insertion methods on Linked List
 #include <bits/stdc++.h>
 using namespace std;
-
 // A linked list node
 class Node
 {
@@ -14,7 +13,7 @@ class Node
 /* Given a reference (pointer to pointer)
 to the head of a list and an int, inserts
 a new node on the beg of the list. */
-void beg(Node** head_ref, int new_data)
+void beg(Node* *head_ref, int new_data)
 {
 	/* 1. allocate node */
 	Node* new_node = new Node();
