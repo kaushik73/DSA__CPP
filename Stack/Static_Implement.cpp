@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define N 5
+#define N 25
 using namespace std;
 int stacck[N];
 int top = -1;

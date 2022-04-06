@@ -1,78 +1,77 @@
 #include <bits/stdc++.h>
-#define N 5
 using namespace std;
-// int stacck[N];
-// int top = -1;
-struct node
+
+class Stack
 {
+public:
     int data;
-    struct node *next;
-};
-struct node *newnode, *top = NULL, *temp; //0=NULL
-int choice;
-/*For Push and Pop We will do from begning because if we do this from end the we have to traverse the LL too and that will take O(n) which is not the good approach to push or pop from a stack. */
-
-void Push(int x)
-{
-    //we not have to check overflow because we are dynamically allocating the memory
-
-    newnode = (struct node *)malloc(sizeof(struct node));
-    cout << "Enter data : ";
-    newnode->data = x;
-    newnode->next = top;
-    top = newnode;
-}
-void Pop()
-{
-    temp = top;
-    if (top == 0)
+    Stack *next;
+    Stack(int d)
     {
-        cout << "Empty\n";
+        this->data = d;
+        this->next = NULL;
     }
-    else
+} *top = NULL;
+void linkedListTraversal(Stack *ptr)
+{
+    while (ptr != NULL)
     {
-        cout << "Popped element is : " << temp->data;
-        top = top->next;
-        free(temp);
+        cout << ptr->data << " ";
+        ptr = ptr->next;
     }
+    cout<<endl;
 }
-void Peek()
+bool isempty(Stack *top)
 {
     if (top == NULL)
-    {
-        cout << "Empty";
-    }
-    cout << "Top Element is : " << top->data << endl;
+        return true;
+    return false;
 }
-void Display()
+bool isfull()
 {
-    temp = top;
-    if (temp == NULL)
+    Stack *new1 = new Stack(55);
+    if (new1 == NULL)
+        return true;
+    return false;
+}
+void push(Stack *top, int element)
+{
+    if (isfull())
     {
-        cout << "Stack is Empty'\n";
+        cout << "OverFlow\n";
     }
     else
     {
-        cout << "Stact is \n";
-        while (temp != NULL)
-        {
-            cout << temp->data << " ";
-            temp = temp->next;
-        }
+        Stack *s1 = new Stack(element);
+        s1->next = top;
+        top = s1;
     }
+}
+
+int pop(Stack *top)
+{
+    int x;
+    if (isempty(top))
+    {
+        cout << "UnderFlow\n";
+    }
+    else
+    {
+        Stack *deleted = top;
+        x = deleted->data;
+        free(deleted);
+        top = top->next;
+    }
+    return x;
 }
 int main()
 {
-    {
-        Push(2);
-        Push(3);
-        Push(10);
-        Display();
-        Peek();
-        Pop();
-        Peek();
-        Display();
-    }
-
-    return 0;
+    push(top, 45);
+    cout << "deleted element is : " << pop(top) << endl;
+    linkedListTraversal(top);
+    push(top, 46);
+    cout << "deleted element is : " << pop(top) << endl;
+    push(top, 47);
+    cout << "deleted element is : " << pop(top) << endl;
+    push(top, 48);
 }
