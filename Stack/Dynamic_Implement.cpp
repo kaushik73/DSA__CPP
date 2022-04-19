@@ -19,7 +19,7 @@ void linkedListTraversal(Stack *ptr)
         cout << ptr->data << " ";
         ptr = ptr->next;
     }
-    cout<<endl;
+    cout << endl;
 }
 bool isempty(Stack *top)
 {
@@ -42,12 +42,17 @@ void push(Stack *top, int element)
     }
     else
     {
+        cout << "push f\n";
         Stack *s1 = new Stack(element);
         s1->next = top;
         top = s1;
     }
 }
-
+int peek(Stack *top)
+{
+    cout << "peek called\n";
+    return top->data;
+}
 int pop(Stack *top)
 {
     int x;
@@ -67,11 +72,12 @@ int pop(Stack *top)
 int main()
 {
     push(top, 45);
-    cout << "deleted element is : " << pop(top) << endl;
-    linkedListTraversal(top);
+    cout << "Peek is : " << peek(top);
     push(top, 46);
-    cout << "deleted element is : " << pop(top) << endl;
-    push(top, 47);
-    cout << "deleted element is : " << pop(top) << endl;
-    push(top, 48);
+    // cout << "deleted element is : " << pop(top) << endl;
+    // linkedListTraversal(top);
+    // cout << "deleted element is : " << pop(top) << endl;
+    // push(top, 47);
+    // cout << "deleted element is : " << pop(top) << endl;
+    // push(top, 48);
 }
