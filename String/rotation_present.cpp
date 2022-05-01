@@ -40,5 +40,9 @@ int main() {
                 cout<<"Given Strings are rotations of each other.";
         else
                 cout<<"Given Strings are not rotations of each other.";
+
+
+        
         return 0;
+
 }
