@@ -60,23 +60,3 @@ void quickSort(int a[], int beg, int end)
 
 
 
-
-
-// SinglyLinkedListNode* head = NULL;
-// SinglyLinkedListNode* temp = NULL;
-
-// if(head==NULL){
-//     head=temp= llist;
-//     head->data =data;
-//     head->next = NULL;
-// }
-// else{
-// llist->next = temp;
-// llist->data = data;
-// temp->next = NULL;
-// temp=llist;
-// head=llist;
-
-// }
-// return head;
-// }

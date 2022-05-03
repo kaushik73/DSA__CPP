@@ -1,8 +1,13 @@
 #include <iostream>
 using namespace std;
-void my_f_int_Array(int temp[])
+void my_f_int_Array1(int temp[])
 {
     cout << "This is how integer array is passed : " << temp << endl;
+}
+// In function passing temp[] == *temp == address passing
+void my_f_int_Array(int *temp)
+{
+    cout << "This is how integer array is passed : " << temp << endl; 
 }
 void my_f_char_Array(char ch[])
 {

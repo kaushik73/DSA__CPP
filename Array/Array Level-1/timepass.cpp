@@ -1,16 +1,23 @@
-// Simple C++ program to find k'th smallest element
-#include <algorithm>
-#include <iostream>
+#include<iostream>
 using namespace std;
- 
 
-int main(){
-	const int  n = 5;
-int arr[n] ={1,2,3,4,5};
-for(int i=0; i <10;i++){
-	cout<<arr[i]<<" "<<endl;
-	cout<<arr[i]<<" "<<endl;
+void print(int arr[], int n  , int start = 0) {
 
-};
-cout<< "\n"<<arr[6];
+    for(int i = start; i<n; i++) {
+        cout << arr[i] << endl;
+    }
+
+}
+
+int main() {
+
+    int arr[5] = {1,4,7,8,9};
+    int size = 5;
+
+    print(arr, size);
+    cout << endl;
+    print(arr, size, 2);
+
+
+    return 0;
 }

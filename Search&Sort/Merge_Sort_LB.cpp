@@ -1,3 +1,5 @@
+// faster than bubble, selection and insertionSort
+
 #include <iostream>
 using namespace std;
 void merge(int *arr, int s, int e)
