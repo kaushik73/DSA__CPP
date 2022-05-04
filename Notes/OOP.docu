@@ -2,3 +2,20 @@ OOPs refers to languages that uses objects in programming. Object-oriented progr
 
 Class is a user defined datatype
 Object instance of class
+
+
+Empty class has size 1
+
+Access property or data member using dot operator
+
+64 bit operating system read 8-8 byte at a time and 32 bit operating system write 4-4 byte at a time i.e 4byte cycle at a time
+
+variable ko size dete time cycle waste nahi karni
+
+
+padding is adding extra space so that OS can work smoothly.
+
+
+current object ka address this mai store hota hai. this keyword is a pointer. 
+
+Agar tumne koi bhi constructor bana diya (parameterized OR Non-parameterized) too joo default bana hua hota hai vo delete ho jate hai.
