@@ -38,6 +38,8 @@ int main()
 {
     // created k1 statically
     kaushik1 k1(10);
+    cout << endl;
+    kaushik1 k3; // this is right ,  kaushik1 k3() -> this is wrong
     cout << "size : " << sizeof(k1) << endl;
     // k1.marks = 23; // as marks is private cannot be accessed outside the class
     k1.setmarks(23);
