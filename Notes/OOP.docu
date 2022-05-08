@@ -19,3 +19,61 @@ padding is adding extra space so that OS can work smoothly.
 current object ka address this mai store hota hai. this keyword is a pointer. 
 
 Agar tumne koi bhi constructor bana diya (parameterized OR Non-parameterized) too joo default bana hua hota hai vo delete ho jate hai.
+
+To deallocate memory, we use destructor
+
+Object which are created statically for these destructor are called automatically. Dynamic vale k liyae manually call karna padega
+
+static keyword -> it is a type of data member that belongs to a class not to object
+               -> it does not requires creation of an object 
+
+Static functios -> no need to create object
+                -> this keyword nahi hota as jab object hi nahi too this kisko point karega
+                -> can only access static member
+
+
+protected -> accessible inside the class (like private)
+          -> accessible by child or derived class
+
+
+Hierarchical -> One class is parent for more than one class
+
+
+Code is not shortened all the times by encapsulating it. By making private data members, we protect the data, and encapsulated data is better for unit testing, and it provides code reusability.
+
+
+Agar tumne child class me same name ka variable bana diya jo ki parent class m bhi tha (say int A ) too agar koi function child class m A ki value change kar rha hai too vo child class vaale A ki value change karega na ki parent class ke A ki.
+
+
+Whenever one writes a constructor(with or without parameter), then the default constructor  is overwritten i.e agar tumne parameterized banaya hai too non-parameterised delete ho gaya hai ab agar object banaoge without any argument too error aaygi.
+
+
+Destructors are called at the following time: i) at the end of the program to destroy objects declared in the main() or global scope. ii) at the end of a function to destroy objects declared at that function scope. iii) when the user by himself tries to delete an object using the delete operator. iv) at the end of a block to destroy objects declared at that block scope.
+
+ Overriding (define) = the same function print() is defined in both Base and Derived classes. So, when we call print() from the Derived object derived1, the print() from Derived is executed by overriding the function in Base.
+
+File->constructor_reuse
+Base::show(); // calling base class show function too from derived class show function.
+Derived() : Base() // adding Base class constructor too in derived class constructor.
+
+When the base class and derived class have member functions with exactly the same name, same return-type, and same arguments list, then it is said to be function overriding.
+
+
+Rules for method overriding:
+The method of the parent class and the method of the child class must have the same name and same parameters. It is possible through inheritance only.
+
+Method overriding can occur through inheritance only.
+
+Advantages Of Abstraction
+Only you can make changes to your data or function, and no one else can.
+It makes the application secure by not allowing anyone else to see the background details.
+Increases the reusability of the code. Avoids duplication of your code
+
+Abstraction -> Implementation hiding.
+Abstraction -> hiding implementation using abstract class and interfaces etc.
+Encapsulation -> Wrapping up data members and functions.
+Encapsulation -> hiding data like using getter and setter etc.
+Inheritance -> Inheriting properties of parent class 
+Polymorphism -> Many Forms (Compile time-overloading and Run time-overriding)
+
+The destructor of a class cannot be overloaded in C++ programming. Increment operator, constructor, and new and delete can be overloaded.
