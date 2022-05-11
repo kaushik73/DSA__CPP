@@ -77,3 +77,6 @@ Inheritance -> Inheriting properties of parent class
 Polymorphism -> Many Forms (Compile time-overloading and Run time-overriding)
 
 The destructor of a class cannot be overloaded in C++ programming. Increment operator, constructor, and new and delete can be overloaded.
+
+
+2 4 6 8 3 2 1 1 0

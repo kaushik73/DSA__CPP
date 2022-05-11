@@ -1,18 +1,17 @@
 #include <bits/stdc++.h>
 #include <chrono>
-//optimised bubble sort :-
+// optimised bubble sort :-
 int main()
 
 {
     using namespace std;
-    auto start = chrono::high_resolution_clock::now();
-
     int arr[] = {12, 13, 1, 10, 34, 1};
     int n = sizeof(arr) / sizeof(arr[0]);
-    for (int i = 0; i < n - 1; i++) //outer loop for passes
+    for (int i = 0; i < n - 1; i++) // outer loop for passes
     {
         int flag = 0;
-        for (int j = 0; j < n - 1 - i; j++){ // inner loop for swapping
+        for (int j = 0; j < n - 1 - i; j++)
+        { // inner loop for swapping
             if (arr[j] > arr[j + 1])
             {
                 swap(arr[j], arr[j + 1]);
@@ -29,9 +28,4 @@ int main()
 
         cout << arr[i] << " ";
     }
-
-    // time count
-    auto stop = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-    cout << duration.count() << endl;
 }

@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 int main()
-
 {
     using namespace std;
     int arr[] = {64, 25, 12, 22};
@@ -13,18 +12,17 @@ int main()
             if (arr[j] < arr[min])
             {
                 min = j;
-                cout << i << " ";
             }
         }
+        swap(arr[min], arr[i]);
 
-        if (min != i)
-        {
-            swap(arr[min], arr[i]);
-        }
+        // if (min != i)
+        // {
+        //     swap(arr[min], arr[i]);
+        // }
     }
     for (int i = 0; i < n; i++)
     {
-        cout << endl
-             << arr[i] << " ";
+        cout <<"\n"<< arr[i] << " ";
     }
 }

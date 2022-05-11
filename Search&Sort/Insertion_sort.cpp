@@ -1,15 +1,17 @@
-// C++ program for insertion sort
-#include <bits/stdc++.h>
-using namespace std;
+// Adaptable algorithm ->jaise chalte jaa rahe hai array sort hota jaa rha hai 
+// It is a stable algorithm
 
+#include <iostream>
+using namespace std;
+// Insertion Sort m swap nahi shift karte hai
 /* Function to sort an array using insertion sort*/
 void insertionSort(int arr[], int n)
 {
-	int i, key, j;
-	for (i = 1; i < n; i++)
+	int key;
+	for (int i = 1; i < n; i++)
 	{
 		key = arr[i];
-		j = i - 1;
+		int j = i - 1;
 
 		/* Move elements of arr[0..i-1], that are
 		greater than key, to one position ahead
@@ -17,31 +19,21 @@ void insertionSort(int arr[], int n)
 		while (j >= 0 && arr[j] > key)
 		{
 			arr[j + 1] = arr[j];
-			j = j - 1;
+			j--;
 		}
 		arr[j + 1] = key;
 	}
 }
 
-// A utility function to print an array of size n
-void printArray(int arr[], int n)
-{
-	int i;
-	for (i = 0; i < n; i++)
-		cout << arr[i] << " ";
-	cout << endl;
-}
-
-/* Driver code */
 int main()
 {
-	int arr[] = { 12, 11, 13, 5, 6 };
+	int arr[] = {12, 11, 10, 5, 6};
 	int n = sizeof(arr) / sizeof(arr[0]);
 
 	insertionSort(arr, n);
-	printArray(arr, n);
+	for (int i = 0; i < n; i++)
+		cout << arr[i] << " ";
+	cout << endl;
 
 	return 0;
 }
-
-// This is code is contributed by rathbhupendra

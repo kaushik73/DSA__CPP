@@ -23,6 +23,11 @@ int main()
     v.push_back(12);     //size increaed to 6
     v.push_back(24);
     v.push_back(36);
+
+    printvec(v);
+    v.pop_back();
+    printvec(v);
+
     printvec(v);
     cout << "Size of V is : "<<v.size() << endl;
     vector<int> v2 = v;
