@@ -11,7 +11,7 @@ public:
 
     void show()
     {
-        cout << "\nBase class show() method called";
+        cout << "\nBase  class show() method called";
     }
 };
 
@@ -27,7 +27,7 @@ public:
     {
         cout << "\nDerived class show() method called";
         Base::show(); // calling base class show function too
-    }
+    } 
 };
 
 int main()
@@ -37,7 +37,9 @@ int main()
     d.show();
     d.Base::show();
 
-    cout<<"\nNew\n";
+    cout << "\nNew\n";
     Derived temp;
     temp.show();
+
+    // temp runner
 }
