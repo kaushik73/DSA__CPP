@@ -61,6 +61,7 @@ void anyPos(int position)
     }
     else if (temp->next == 0)
     {
+        // end position
         tail = tail->prev;
         tail->next = 0;
         free(temp);
@@ -99,18 +100,18 @@ int len()
 // Reverse1 is not working :-
 void Reverse1()
 {
-     struct Node *nextnode;
-     struct Node *current;
-     while (current !=  NULL)
-     {
-       nextnode = current->next;
-       current->next = current->prev;
-       current->prev = nextnode;
-       current = current->next;
-     }
-     current = head;
-     head = tail;
-     tail = current;
+    struct Node *nextnode;
+    struct Node *current;
+    while (current != NULL)
+    {
+        nextnode = current->next;
+        current->next = current->prev;
+        current->prev = nextnode;
+        current = current->next;
+    }
+    current = head;
+    head = tail;
+    tail = current;
 }
 void Reverse(Node **head_ref)
 {

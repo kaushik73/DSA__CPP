@@ -19,10 +19,10 @@ public:
     ~Node()
     {
         int val = this->data;
-        if (next != NULL)
+        if (this->next != NULL)
         {
             delete next;
-            next = NULL;
+            this->next = NULL;
         }
         cout << "memory free for node with data " << val << endl;
     }
@@ -49,6 +49,7 @@ int getLength(Node *head)
 
     while (temp != NULL)
     {
+        cout << temp << " ---- ";
         len++;
         temp = temp->next;
     }
@@ -126,7 +127,6 @@ int main()
     Node *tail = NULL;
 
     print(head);
-    // cout << getLength(head) << endl;
 
     insertAtHead(tail, head, 11);
     print(head);
@@ -147,6 +147,8 @@ int main()
     print(head);
     insertAtTail2(head, 43);
     print(head);
+    cout << head << "_______";
+    cout << getLength(head) << endl;
 
     insertAtPos(tail, head, 23, 3);
     print(head);

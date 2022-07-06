@@ -11,9 +11,10 @@ int main()
     };
 
     struct node *newnode, *head, *temp, *last;
-    int choice;
+    // int choice;
     head = NULL;
-    while (choice)
+    int choice = 3;
+    while (choice >= 1)
     {
         newnode = (struct node *)malloc(sizeof(struct node));
         cout << "Enter data : ";
@@ -30,7 +31,7 @@ int main()
         }
 
         cout << "Do you want to continue(0,1) : ";
-        cin >> choice;
+        choice--;
     }
 
     temp = head;
@@ -41,21 +42,21 @@ int main()
     }
     cout << "\nReverse of Your LL is : ";
 
-    //Main Code Start
+    // Main Code Start
     struct node *current = head;
     struct node *next = NULL;
     struct node *prev = NULL;
     while (current != NULL)
     {
-        next = current->next; //next ↑
-        current->next = prev; //Main ↑
-        prev = current;       //prev ↑
-        current = next;       //current ↑
+        next = current->next; // next ↑
+        current->next = prev; // Main ↑
+        prev = current;       // prev ↑
+        current = next;       // current ↑
     }
     head = prev;
     // Main Code end
 
-    //printing LL
+    // printing LL
     temp = head;
     while (temp != NULL)
     {

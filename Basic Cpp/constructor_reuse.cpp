@@ -27,7 +27,7 @@ public:
     {
         cout << "\nDerived class show() method called";
         Base::show(); // calling base class show function too
-    } 
+    }
 };
 
 int main()
@@ -36,7 +36,6 @@ int main()
     //  Here, d is an object of the Derived class, and the method show() is overridden in the derived class. So the run time polymorphism happens, and derived fun() is called.
     d.show();
     d.Base::show();
-
     cout << "\nNew\n";
     Derived temp;
     temp.show();

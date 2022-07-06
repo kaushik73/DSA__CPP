@@ -12,9 +12,9 @@ int main()
     };
 
     struct node *newnode, *head, *temp, *last;
-    int choice;
+    int choice = 1;
     head = NULL;
-    while (choice)
+    while (choice == 1)
     {
         newnode = (struct node *)malloc(sizeof(struct node));
         // cout << "Enter data : ";
@@ -33,7 +33,7 @@ int main()
         // cout << "Do you want to continue(0,1) : ";
         cin >> choice;
     }
-    // Printing (Reverse) LL
+    // Printing  LL
 
     temp = head;
     while (temp != NULL)
@@ -41,6 +41,7 @@ int main()
         cout << temp->data << " ";
         temp = temp->next;
     }
+
     struct node *current = head;
     struct node *next = NULL;
     struct node *prev = NULL;

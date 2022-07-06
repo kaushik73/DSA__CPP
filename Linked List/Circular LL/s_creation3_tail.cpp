@@ -8,7 +8,7 @@ int main()
     {
         int data;
         struct node *next;
-    } * newnode, *tail=NULL, *temp;
+    } * newnode, *tail = NULL, *temp;
     int choice = 1;
     while (choice)
     {
@@ -23,7 +23,7 @@ int main()
         }
         else
         {
-            newnode->next = tail->next; //for circular last node me head ka address
+            newnode->next = tail->next; // for circular last node me head ka address
             tail->next = newnode;
             tail = newnode;
         }
@@ -31,14 +31,14 @@ int main()
         cin >> choice;
     }
     // cout<<"Tail->data : "<<tail->data<<endl;
-    temp = tail->next; //first node address
+    temp = tail->next; // first node address
     // cout<<"temp->data : "<<temp->data<<endl;
-    
+
     while (temp->next != tail->next)
     {
-    // {   cout<<"this is w loop";
+        // {   cout<<"this is w loop";
         cout << temp->data << " ";
         temp = temp->next;
     }
-    cout << temp->data; //for last node print
+    cout << temp->data; // for last node print
 }
