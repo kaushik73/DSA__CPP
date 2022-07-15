@@ -2,7 +2,7 @@
 using namespace std;
 int b[15];
 void Merge(int a[], int lb, int mid, int ub)
-{   
+{
     //  cout<<endl<<lb<<endl;
 
     int i = lb;
@@ -48,10 +48,9 @@ void Merge(int a[], int lb, int mid, int ub)
 void MergeSort(int a[], int lb, int ub)
 {
     if (lb < ub)
-    { //that array has atleast 2 elements
-        int mid =0;
-        int temp = lb + ub;
-        mid= temp/2;
+    { // that array has atleast 2 elements
+        int mid = 0;
+        mid = (lb + ub) / 2;
         // cout<<mid<<endl;
         MergeSort(a, lb, mid);
         MergeSort(a, mid + 1, ub);

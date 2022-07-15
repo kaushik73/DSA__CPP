@@ -1,87 +1,91 @@
-// #include <bits/stdc++.h>
-// // #define N 5
-// using namespace std;
-// class Stack
-// {
-// public:
-// Stack *top = NULL;
-//     int data;
-//     Stack *next;
-//     Stack(int element)
-//     {
-//         this->data = element;
-//         next = NULL;
-//         // top = NULL; // head ptr
-//     }
-// };
+#include <iostream>
+#include <stack>
+using namespace std;
 
-// bool isfull()
-// {
-//     Stack *temp = new Stack(12);
-//     if (temp == NULL)
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
-// bool isempty(Stack *top)
-// {
-//     if (top == NULL)
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
+class Node
+{
+public:
+    int data;
+    Node *next;
+    // int size;
 
-// void push(int element)
-// {
-//     if (isfull()) // empty stack
-//     {
-//         cout << "OverFlow";
-//     }
-//     else
-//     {
-//         Stack *newnode = new Stack(element);
-//         newnode->next = top;
-//         top = newnode;
-//     }
-// }
-// void pop()
-// {
-//     if (!isempty(top))
-//     {
-//         top = top->next;
-//     }
-//     else
-//     {
-//         cout << "UnderFlow\n";
-//     }
-// }
+    Node(int d)
+    {
+        next = NULL;
+        data = d;
+    }
+};
 
-// int peek()
-// {
-//     if (!isempty(top))
-//     {
-//         return top->data;
-//     }
-//     else
-//     {
-//         cout << "No element is present in stack\n";
-//     }
-// }
-// int main()
-// {
-//     push(3);
-//     push(4);
-//     push(5);
-//     push(6);
-//     cout << "top element is : " << peek();
-//     pop();
-//     cout << "top element is : " << peek();
-// }
+Node *top = NULL;
+
+void push(int data)
+{
+    if (top == NULL)
+    {
+        Node *newnode = new Node(data);
+        top = newnode;
+    }
+    else
+    {
+        Node *newnode = new Node(data);
+        newnode->next = top;
+        top = newnode;
+    }
+}
+
+void print()
+{
+    Node *temp = top;
+    if (top == NULL)
+    {
+        cout << "Empty\n";
+        return;
+    }
+    while (temp != NULL)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+void pop()
+{
+    if (top != NULL)
+    {
+        top = top->next;
+    }
+    else
+    {
+        cout << "Underflow\n";
+    }
+}
+
+bool isEmpty()
+{
+    return top == NULL;
+}
+
+int peek()
+{
+    return top->data;
+}
+int main()
+{
+
+    pop();
+    cout << isEmpty() << endl;
+    print();
+    push(5);
+    push(6);
+    push(7);
+    push(8);
+    cout << "peek is :" << peek() << endl;
+    push(9);
+    push(10);
+    print();
+    pop();
+    print();
+    cout << "peek is :" << peek() << endl;
+    cout << isEmpty() << endl;
+}

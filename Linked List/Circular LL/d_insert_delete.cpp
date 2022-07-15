@@ -7,6 +7,7 @@ struct node
     struct node *prev;
     struct node *next;
 } *head = NULL, *newnode, *tail;
+
 int choice = 1;
 void create()
 {
@@ -26,9 +27,9 @@ void create()
         {
             tail->next = newnode;
             newnode->prev = tail;
-            newnode->next = head; //update for making circular
-            head->prev = newnode; //update for making circular
-            tail = newnode;       //pointing to last node
+            newnode->next = head; // update for making circular
+            head->prev = newnode; // update for making circular
+            tail = newnode;       // pointing to last node
         }
         cin >> choice;
     }
